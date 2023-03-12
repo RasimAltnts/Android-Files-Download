@@ -3,14 +3,13 @@ package com.example.android_files_download
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.android_files_download.ui.theme.AndroidFilesDownloadTheme
+import com.example.android_files_download.ui.theme.ui.DownloadPage
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,25 +18,12 @@ class MainActivity : ComponentActivity() {
             AndroidFilesDownloadTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier.fillMaxWidth(1f).fillMaxHeight(0.5f),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    DownloadPage()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    AndroidFilesDownloadTheme {
-        Greeting("Android")
     }
 }
